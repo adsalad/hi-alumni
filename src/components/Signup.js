@@ -1,22 +1,28 @@
-import React, { useRef } from "react";
-import {
-  Form,
-  Button,
-  ToggleButtonGroup,
-  Card,
-  ToggleButton,
-} from "react-bootstrap";
+import React, { useRef, useState } from "react";
+import { Form, Button, Card } from "react-bootstrap";
+//import "./Signup.css"
 
 export default function Signup() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
+  const [universityType, setUniversity] = useState("Western University");
+  const [userType, setUserType] = useState("Student");
+
+  console.log(userType);
+  console.log(universityType);
 
   return (
     <div>
-      <Card>
+      <Card
+        style={{
+          backgroundColor: "gray",
+          color: "white",
+          boxShadow: "5px 5px #000000",
+        }}
+      >
         <Card.Body>
-          <h1 className="text-center mb-4">Sign Up</h1>
+          <h1 className="text-center mb-4">Hi Alumni!</h1>
           <Form>
             <Form.Group className="mt-2" id="email">
               <Form.Label>Email</Form.Label>
@@ -39,30 +45,36 @@ export default function Signup() {
               ></Form.Control>
             </Form.Group>
 
-            <ToggleButtonGroup
-              className="mt-4 w-100"
-              type="radio"
-              name="userType"
-              defaultValue={1}
-            >
-              <ToggleButton id="tbg-radio-1" value={1}>
-                I'm a Student!
-              </ToggleButton>
-              <ToggleButton id="tbg-radio-2" value={2}>
-                I'm an Alumni!
-              </ToggleButton>
-            </ToggleButtonGroup>
-
-            <Form.Group className="mt-3" controlId="exampleForm.ControlSelect1">
+            <Form.Group className="mt-3" controlId="StudentDropdown">
               <Form.Label>Select University</Form.Label>
-              <Form.Control as="select">
+              <Form.Control
+                as="select"
+                value={userType}
+                onChange={(e) => {
+                  setUserType(e.target.value);
+                }}
+              >
+                <option>Student</option>
+                <option>Alumni</option>
+              </Form.Control>
+            </Form.Group>
+
+            <Form.Group className="mt-3" controlId="UniversityDropdown">
+              <Form.Label>Select Alma Status</Form.Label>
+              <Form.Control
+                as="select"
+                value={universityType}
+                onChange={(e) => {
+                  setUniversity(e.target.value);
+                }}
+              >
                 <option>Western University</option>
                 <option>University of Waterloo</option>
               </Form.Control>
             </Form.Group>
 
             <Button className="w-100 mt-4" type="submit">
-              Submit form
+              Sign Up!
             </Button>
           </Form>
         </Card.Body>
