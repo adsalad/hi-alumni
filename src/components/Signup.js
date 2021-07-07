@@ -18,7 +18,7 @@ export default function Signup() {
           backgroundColor: "#3b4483",
           color: "white",
           font: "Helvetica Neue",
-          boxShadow: "0px 8px 10px black"
+          boxShadow: "0px 8px 11px black",
         }}
       >
         <Card.Body>
@@ -73,13 +73,17 @@ export default function Signup() {
               </Form.Control>
             </Form.Group>
 
-            <Button className="w-100 mt-4" type="submit" variant = {"outline-light"}>
+            <Button
+              className="w-100 mt-4"
+              type="submit"
+              variant={"outline-light"}
+            >
               Sign Up!
             </Button>
           </Form>
         </Card.Body>
       </Card>
-      <div className="w-100 text-center mt-2">
+      <div className="w-100 text-center mt-3 text-white">
         Already have an account? Log In
       </div>
     </div>
