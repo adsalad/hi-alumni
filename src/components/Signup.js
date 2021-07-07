@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
 import { Form, Button, Card } from "react-bootstrap";
-//import "./Signup.css"
 
 export default function Signup() {
   const emailRef = useRef();
@@ -16,13 +15,14 @@ export default function Signup() {
     <div>
       <Card
         style={{
-          backgroundColor: "gray",
+          backgroundColor: "#3b4483",
           color: "white",
-          boxShadow: "5px 5px #000000",
+          font: "Helvetica Neue",
+          boxShadow: "0px 8px 10px black"
         }}
       >
         <Card.Body>
-          <h1 className="text-center mb-4">Hi Alumni!</h1>
+          <h1 className="text-center mb-4">UniChat!</h1>
           <Form>
             <Form.Group className="mt-2" id="email">
               <Form.Label>Email</Form.Label>
@@ -36,7 +36,7 @@ export default function Signup() {
                 required
               ></Form.Control>
             </Form.Group>
-            <Form.Group className="mt-2" id="passwordConform">
+            <Form.Group className="mt-2" id="passwordConfirm">
               <Form.Label>Confirm Password</Form.Label>
               <Form.Control
                 type="passwordConfrim"
@@ -46,7 +46,7 @@ export default function Signup() {
             </Form.Group>
 
             <Form.Group className="mt-3" controlId="StudentDropdown">
-              <Form.Label>Select University</Form.Label>
+              <Form.Label>Select Graduation Status</Form.Label>
               <Form.Control
                 as="select"
                 value={userType}
@@ -60,7 +60,7 @@ export default function Signup() {
             </Form.Group>
 
             <Form.Group className="mt-3" controlId="UniversityDropdown">
-              <Form.Label>Select Alma Status</Form.Label>
+              <Form.Label>Select University</Form.Label>
               <Form.Control
                 as="select"
                 value={universityType}
@@ -73,7 +73,7 @@ export default function Signup() {
               </Form.Control>
             </Form.Group>
 
-            <Button className="w-100 mt-4" type="submit">
+            <Button className="w-100 mt-4" type="submit" variant = {"outline-light"}>
               Sign Up!
             </Button>
           </Form>

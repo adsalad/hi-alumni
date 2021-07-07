@@ -1,11 +1,10 @@
 import React from "react";
 import Signup from "./Signup";
 import { Container } from "react-bootstrap";
-//import "./App.css"
 
 function App() {
   return (
-    <div style = {{backgroundColor: "#f7f5f5"}}>
+    <div style={{ backgroundColor: "#222529" }}>
       <Container
         className=" d-flex align-items-center justify-content-center"
         style={{ minHeight: "100vh" }}
